@@ -1,0 +1,33 @@
+.sidebar {
+    background: rgb(51, 51, 53);
+    min-height: calc(100vh - 56px);
+    position: fixed;
+
+}
+
+.nav-box {
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.nav-item {
+    padding: .75rem 1.5rem;
+    font-family: '微軟正黑體';
+    color: #fff;
+    align-items: center;
+}
+.nav-item:hover {
+    cursor: pointer;
+}
+.active {
+    background: #aaa;
+    color: #333;
+    font-weight: bolder;
+}
+ol {
+    margin: 0 !important;
+}
+.breadcrumb {
+    background-color:rgba(0,0,0,0) !important;
+    padding: 0 !important;
+}
