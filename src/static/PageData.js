@@ -154,34 +154,6 @@ export const FilesExample = {
             { type: 'pdf', name: '如何證明之證明無須證明手冊.pdf' }
         ]
 }
-export const YearCalendar = {
-    year: '2020',
-    month: [
-        {
-            month: '1', date: [
-                { day: '1', content: '元旦' },
-                { day: '2', content: 'HELLO' },
-                { day: '3', content: '' },
-                { day: '4', content: '' },
-                { day: '5', content: '' },
-                { day: '6', content: '' },
-                { day: '7', content: '會議報告' },
-                { day: '8', content: '' },
-                { day: '9', content: '' },
-                { day: '10', content: '' },
-                { day: '11', content: '' },
-                { day: '12', content: '' },
-                { day: '13', content: '' },
-                { day: '14', content: '' },
-                { day: '15', content: '' },
-                { day: '16', content: '' },
-                { day: '17', content: '' },
-                { day: '18', content: '' }
-            ]
-        }
-    ]
-}
-
 
 export const ListNotice = [
     { id: '本月新進人員', total: '6', icon: 'fas fa-user-plus', icontext: '本月新進人員' },
@@ -218,6 +190,8 @@ export const DepartmentData = [
     { id: '行動應用部', header: '行動應用部', color: 'bg-success', manger: 'XXX', tel: '09XX-XXX-XXX', icon: 'fas fa-code-branch' },
     { id: '人事部', header: '人事部', color: 'bg-warning', manger: 'XXX', tel: '09XX-XXX-XXX', icon: 'fas fa-user-tie' },
     { id: '會計部', header: '會計部', color: 'bg-info', manger: 'XXX', tel: '09XX-XXX-XXX', icon: 'fas fa-money-bill-wave' },
+    { id: '硬體維修部', header: '硬體維修部', color: 'bg-danger', manger: 'XXX', tel: '09XX-XXX-XXX', icon: 'fas fa-money-bill-wave' },
+
 ]
 
 export const WorksFakeDays = [
@@ -239,46 +213,3 @@ export const CateChioce = [
     { id: 'clear', cate: '清潔用具', icon: 'fas fa-broom' },
     { id: 'food', cate: '其餘貨物', icon: 'fas fa-dolly-flatbed' }
 ]
-
-export const DepartmentTree = {
-    name: '部門組織樹',
-    departments: [
-        {
-            "departmentName": "網頁開發部",
-            "group": [
-                {
-                    "groupCate": "前端組",
-                    "leader": "Timmy"
-                },
-                {
-                    "groupCate": "後端組",
-                    "leader": "Alice"
-                },
-
-            ]
-        },
-        {
-            "departmentName": "行動應用部",
-            "group": [
-                {
-                    "groupCate": "Andriod",
-                    "leader": "Nina"
-                },
-                {
-                    "groupCate": "IOS",
-                    "leader": "Olaf",
-                }
-            ]
-        },
-        {
-            "departmentName": "會計部",
-        },
-        {
-            "departmentName": "人事部",
-        },
-        {
-            "departmentName": "硬體維護部",
-        }
-
-    ]
-}

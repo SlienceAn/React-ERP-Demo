@@ -85,4 +85,42 @@ for (let i = 0; i < 12; i++) {
         { month: i + 1, date: YearCalendar_date }
     )
 }
-export { StaffListRes, StaffWorkRes, StaffDepartRes, InventoryRes, YearCalendar }
+
+
+const randomName = (num) => {
+    let tree = [];
+    for (let i = 0; i < num; i++) {
+        tree.push(faker.name.firstName() + faker.name.lastName())
+    }
+    return tree;
+}
+let PartyTree = [
+    {
+        name: '網頁開發部',
+        leader: randomName(2),
+        member: randomName(6)
+    },
+    {
+        name: '行動應用部',
+        leader: randomName(1),
+        member: randomName(7)
+    },
+    {
+        name: '會計部',
+        leader: randomName(1),
+        member: randomName(3)
+    },
+    {
+        name: '人事部',
+        leader: randomName(2),
+        member: randomName(4)
+    },
+    {
+        name: '硬體維護部',
+        leader: randomName(2),
+        member: randomName(5)
+    },
+
+
+]
+export { StaffListRes, StaffWorkRes, StaffDepartRes, InventoryRes, YearCalendar ,PartyTree}

@@ -14,10 +14,10 @@ class MainPage extends Component {
                 <PublicNav {...MainPageRoute} />
                 <Row style={{ margin: '75px 0px 0px 0px' }}>
                     <Col lg={6} md={12} className="h-100">
-                        <Announcement {...AnnouncementData} />
                         <Project {...ProjectList} />
                     </Col>
                     <Col lg={6} md={12} className="h-100">
+                        <Announcement {...AnnouncementData} />
                         <FilesGroup {...FilesExample} />
                     </Col>
                 </Row>
