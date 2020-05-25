@@ -17,13 +17,15 @@ class MainPage extends Component {
                         <Project {...ProjectList} />
                     </Col>
                     <Col lg={6} md={12} className="h-100">
-                        <Announcement {...AnnouncementData} />
                         <FilesGroup {...FilesExample} />
                     </Col>
                 </Row>
                 <Row style={{ margin: '10px 0 20px 0px' }}>
-                    <Col>
+                    <Col lg={9}>
                         <FullCalendar {...YearCalendar} />
+                    </Col>
+                    <Col lg={3}>
+                        <Announcement {...AnnouncementData} />
                     </Col>
                 </Row>
             </Fragment>

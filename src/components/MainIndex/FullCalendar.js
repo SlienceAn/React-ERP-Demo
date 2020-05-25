@@ -71,7 +71,8 @@ const CalendarDiv = styled.div({
   height: '20vh',
   display: 'flex',
   flexDirection: 'column',
-  border: '.5px solid rgba(3, 54, 56,.5)'
+  borderBottom: '1px solid rgba(3, 54, 56,.5)',
+  borderRight:'1px solid rgba(3, 54, 56,.5)'
 
 })
 const CalenderDate = styled.div({

@@ -59,7 +59,7 @@ class Layout extends Component {
                             {!open && <Nav className="nav-box mt-0">
                                 <div className="border-bottom d-flex align-items-center text-white" style={{ padding: '.75rem' }}>
                                     <i className="fa fa-user" style={{ fontSize: '2rem', marginRight: '2rem' }}></i>
-                                    <div>Hi ! 炎柱</div>
+                                    <div>Hi ! 使用者</div>
                                 </div>
                                 {routerMap.map(el => <LinkContainer key={el.id} className="nav-item" to={el.href}>
                                     <NavItem className="d-flex justify-content-between">

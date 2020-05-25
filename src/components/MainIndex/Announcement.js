@@ -12,14 +12,13 @@ const Announcement = (props) => {
             <Card className="mb-3">
                 <Card.Header>公告</Card.Header>
                 <Card.Body>
-                    <ListGroup>
+                    <ListGroup className="p-0">
                         {Object.keys(props).map(el =>
                             <ListGroup.Item key={props[el].content} className="d-flex justify-content-between">
                                 <div>
                                     <i className="fas fa-volume-up"></i>
                                 </div>
                                 <div>{props[el].date}</div>
-                                <div>{props[el].content.substring(0, 20) + "..."}</div>
                                 <div className="text-primary" onClick={openDatail}>閱讀更多</div>
                             </ListGroup.Item>)}
                     </ListGroup>

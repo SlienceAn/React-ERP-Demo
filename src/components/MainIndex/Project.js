@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Card, ProgressBar, ListGroup, Button } from 'react-bootstrap';
-
+import styled from 'styled-components';
 const randomStyle = ["dark", "success", "info", "warning", "danger", "primary", "secondary"];
 const typeCheck = (types) => {
     switch (types) {
@@ -29,7 +29,7 @@ const Project = (props) => {
     return (
         <Fragment>
             <Card>
-                <Card.Header>
+                <Card.Header className="d-flex">
                     <div>執行專案進度</div>
                 </Card.Header>
                 <Card.Body className="p-0">
@@ -59,4 +59,9 @@ const Project = (props) => {
 Project.propTypes = {
 
 };
+const ProjectColor = styled.div({
+    width: '80%',
+    height: '20px',
+    background: ' linear-gradient(90deg,rgba(85, 160, 90, 1)15%,rgba(85,160,90,1)50%, rgba(235, 220, 70, 0.8)70%)'
+})
 export default Project;

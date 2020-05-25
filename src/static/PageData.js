@@ -11,7 +11,7 @@ export const routerComponent = [
     {
         rid: 'MainPage',
         exact: true,
-        path: '/home',
+        path: '/',
         component: MainPage
     },
     {
@@ -70,7 +70,7 @@ export const routerComponent = [
 export const routerMap = [
     {
         id: 'home',
-        href: '/home',
+        href: '/',
         component: MainPage,
         icon: 'fas fa-home',
         title: '回首頁'
