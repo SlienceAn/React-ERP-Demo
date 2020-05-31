@@ -55,7 +55,7 @@ class Layout extends Component {
                         </Navbar.Brand>
                     </Navbar>
                     <Row style={{ margin: '0' }}>
-                        <SidebarLeft style={{ padding: '0', zIndex: '99', marginTop: '56px', width: open ? '0px' : '250px' }} className="sidebar position-fixed ">
+                        <SidebarLeft style={{ padding: '0', zIndex: '1', marginTop: '56px', width: open ? '0px' : '250px' }} className="sidebar position-fixed ">
                             {!open && <Nav className="nav-box mt-0">
                                 <div className="border-bottom d-flex align-items-center text-white" style={{ padding: '.75rem' }}>
                                     <i className="fa fa-user" style={{ fontSize: '2rem', marginRight: '2rem' }}></i>

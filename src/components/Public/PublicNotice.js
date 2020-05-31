@@ -9,7 +9,7 @@ class PublicNotice extends Component {
         this.props.getDetail(e.target.value)
     }
     render() {
-        const { open, handleOpen, data } = this.props
+        const { open, handleOpen, data, total } = this.props
         return (
             <Fragment>
                 <Row style={{ margin: '75px 0px 10px 0px', fontFamily: '微軟正黑體' }}>
@@ -17,7 +17,7 @@ class PublicNotice extends Component {
                         <Card>
                             <Card.Body className="p-0">
                                 <div style={{ margin: '0px auto', padding: '1rem' }}>
-                                    <img src={imglogo} className="w-100 bg-secondary" />
+                                    <img src={imglogo} className="bg-secondary" />
                                     <OwnBtn className="btn btn-secondary" onClick={handleOpen} >個人資訊</OwnBtn>
                                 </div>
                             </Card.Body>
@@ -34,7 +34,7 @@ class PublicNotice extends Component {
                                                 <Card.Body className="d-flex justify-content-between align-items-center">
                                                     <i className={data[el].icon} style={{ fontSize: '2rem' }}></i>
                                                     <div className="d-flex align-items-baseline">
-                                                        <div style={{ fontSize: '2rem' }}>{data[el].total}</div>
+                                                        <div style={{ fontSize: '2rem' }}>{total[idx]}</div>
                                                         <div>/人</div>
                                                     </div>
                                                 </Card.Body>

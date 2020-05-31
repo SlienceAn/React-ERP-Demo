@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Layout from './components/Layout'
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import withOpen from './HOC/withOpen';
-const LayoutWithOpen = withOpen(Layout);
+import Login from './components/LoginPage/Login'
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Layout/>
+      <Login />
     </Switch>
   </BrowserRouter>
 

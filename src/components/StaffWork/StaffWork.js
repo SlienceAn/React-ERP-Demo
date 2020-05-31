@@ -3,7 +3,7 @@ import { PublicNav } from '../Layout';
 import PublicTable from '../Public/PublicTable';
 import PublicNotice from '../Public/PublicNotice';
 import { WorksNotice, WorksRoute } from '../../static/PageData'
-import { StaffWorkRes } from '../../static/TestDataFake'
+import { StaffWorkRes ,StaffWorkAll} from '../../static/TestDataFake'
 import withOpen from '../../HOC/withOpen';
 import StaffWorkForm from './StaffWorkForm'
 const WithOpenPublicNotice = withOpen(PublicNotice)
@@ -22,7 +22,7 @@ class StaffWork extends Component {
             <div>
                 <PublicNav {...WorksRoute} />
                 <div style={{ width: '98%', margin: '0 auto' }}>
-                    <WithOpenPublicNotice data={this.state.NoticeContent} getDetail={this.getDetail}>
+                    <WithOpenPublicNotice data={this.state.NoticeContent} getDetail={this.getDetail} total={StaffWorkAll}>
                         <StaffWorkForm />
                     </WithOpenPublicNotice>
                     <WithOpenPublicTable {...this.state}>

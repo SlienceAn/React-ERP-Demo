@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Table, Button, InputGroup, FormControl, Col, Pagination } from 'react-bootstrap';
+import { Table, Button, InputGroup, FormControl, Col, Pagination, ListGroup } from 'react-bootstrap';
 import styled from 'styled-components';
 import DataModal from './DataModal';
 class PublicTable extends Component {
@@ -8,7 +8,8 @@ class PublicTable extends Component {
         dataTree: [],
         startActive: 1,
         countPage: '',
-        showPage: 5
+        showPage: 10,
+        searchList: []
     }
     componentDidMount() {
         let btns = [];
@@ -46,8 +47,14 @@ class PublicTable extends Component {
                 break;
         }
     }
+    searchInput = e => {
+        const { value } = e.target;
+        this.setState({
+            searchList: Object.values(this.props.StaffRes).filter(el => el.ChineseName.indexOf(value) != "-1")
+        })
+    }
     render() {
-        const { pages, dataTree, startActive, countPage } = this.state;
+        const { pages, dataTree, startActive, countPage, searchList } = this.state;
         const { open, handleOpen, StaffRes } = this.props;
         return (
             <Fragment>
@@ -55,36 +62,23 @@ class PublicTable extends Component {
                     <div className="d-flex mb-3">
                         <Col lg={2} md={12} className="p-0 mr-2">
                             <InputGroup>
-                                <InputGroup.Prepend>
+                                <FormControl
+                                    placeholder="Username"
+                                    aria-label="Username"
+                                    aria-describedby="basic-addon1"
+                                    onChange={this.searchInput}
+                                /> <InputGroup.Prepend>
                                     <InputGroup.Text id="basic-addon1">
                                         <i className="fa fa-search"></i>
+                                        <span>搜尋</span>
                                     </InputGroup.Text>
                                 </InputGroup.Prepend>
-                                <FormControl
-                                    placeholder="Username"
-                                    aria-label="Username"
-                                    aria-describedby="basic-addon1"
-                                />
                             </InputGroup>
+                            <SearchList>
+                                {searchList.map(el =>
+                                    <ListGroup.Item>{el.ChineseName}</ListGroup.Item>)}
+                            </SearchList>
                         </Col>
-                        <Col lg={2} md={12} className="p-0 mr-2">
-                            <InputGroup>
-                                <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon1">
-                                        <i className="fas fa-clock"></i>
-                                    </InputGroup.Text>
-                                </InputGroup.Prepend>
-                                <FormControl
-                                    placeholder="Username"
-                                    aria-label="Username"
-                                    aria-describedby="basic-addon1"
-                                />
-                            </InputGroup>
-                        </Col>
-                        <Button variant="primary" className="mr-2 d-flex align-items-center">
-                            <i className="fas fa-exchange-alt mr-2"></i>
-                            <div>排序</div>
-                        </Button>
                         <Button variant="primary" className="mr-2 d-flex align-items-center">
                             <i className="fas fa-download mr-2"></i>
                             <div>下載</div>
@@ -93,9 +87,9 @@ class PublicTable extends Component {
                             <div className="d-flex ml-auto justify-content-center align-items-center bd-highlight">
                                 <div className="mr-2">每頁顯示</div>
                                 <select className="mr-2" onChange={this.changePage} name="select">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
+                                    <option value="5">10</option>
+                                    <option value="10">20</option>
+                                    <option value="20">30</option>
                                 </select>
                                 <div>個 ,</div>
                             </div>
@@ -126,7 +120,7 @@ class PublicTable extends Component {
                                 </tr>)}
                         </tbody>
                     </Table>
-                    <Pagination>
+                    <Pagination className="align-items-center">
                         <Pagination.Item onClick={this.changePage}>
                             <i className="fas fa-chevron-left"></i>
                         </Pagination.Item>
@@ -134,7 +128,12 @@ class PublicTable extends Component {
                         <Pagination.Item onClick={this.changePage}>
                             <i className="fas fa-chevron-right"></i>
                         </Pagination.Item>
+                        <span className="ml-auto">
+                            <i className="fa fa-paste mr-2"></i>
+                            <span>共 {this.props.StaffRes.length} 筆資料</span>
+                        </span>
                     </Pagination>
+
                 </TableBg >
                 {open && <DataModal handleOpen={handleOpen} >
                     {this.props.children}
@@ -150,7 +149,14 @@ const TableBg = styled.div({
     padding: '20px',
     borderRadius: '.5rem',
     background: '#fff',
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    minHeight: '50vh'
 })
 
+const SearchList = styled.span({
+    position: 'absolute',
+    width: '100%',
+    maxHeight: '30vh',
+    overflowY: 'scroll'
+})
 export default PublicTable;

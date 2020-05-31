@@ -23,38 +23,47 @@ export const RandomDetail = (DataArr, Max) => {
 for (let i = 0; i < RandomTotal; i++) {
     //員工列表資料
     StaffListRes.push({
-        '員工代碼': (faker.random.number() + faker.random.word()).substring(0, 5),
-        '中文姓名': faker.name.firstName() + faker.name.lastName(),
-        '英文姓名': faker.name.findName(),
-        '手機': faker.phone.phoneNumber(),
-        '住址': faker.address.city(),
-        '信箱': faker.internet.email(),
-        '部門': RandomDetail(DepartmentList, 4),
-        '部門代碼': faker.random.number(),
-        '狀態': RandomDetail(WorksList, 4)
-
+        StaffCode: (faker.random.number() + faker.random.word()).substring(0, 5),
+        ChineseName: faker.name.firstName() + faker.name.lastName(),
+        EnglishName: faker.name.findName(),
+        Phone: faker.phone.phoneNumber(),
+        Address: faker.address.city(),
+        Email: faker.internet.email(),
+        Department: RandomDetail(DepartmentList, 4),
+        DepartmentCode: faker.random.number(),
+        Status: RandomDetail(WorksList, 4)
     })
     //出勤列表資料
     StaffWorkRes.push({
-        '員工代碼': (faker.random.number() + faker.random.word()).substring(0, 5),
-        '中文姓名': faker.name.firstName() + faker.name.lastName(),
-        '英文姓名': faker.name.findName(),
-        '手機': faker.phone.phoneNumber(),
-        '住址': faker.address.city(),
-        '假別': RandomDetail(CateHoilday, 4),
-        '日期': faker.date.month()
+        StaffCode: (faker.random.number() + faker.random.word()).substring(0, 5),
+        ChineseName: faker.name.firstName() + faker.name.lastName(),
+        EnglishName: faker.name.findName(),
+        Phone: faker.phone.phoneNumber(),
+        Address: faker.address.city(),
+        Status: RandomDetail(CateHoilday, 4),
+        Date: faker.date.month()
     })
 }
-
+const news = StaffListRes.filter(el => el.Status == '新進').length
+const leave = StaffListRes.filter(el => el.Status == '離職').length
+const change = StaffListRes.filter(el => el.Status == '調職').length
+const retire = StaffListRes.filter(el => el.Status == '退休').length
+export const StatusListAll = [news, leave, change, retire]
+const works = StaffWorkRes.filter(el => el.Status == '事假').length
+const sick = StaffWorkRes.filter(el => el.Status == '病假').length
+const special = StaffWorkRes.filter(el => el.Status == '特休').length
+const more = StaffWorkRes.filter(el => el.Status == '加班補休').length
+const out = StaffWorkRes.filter(el => el.Status == '出差').length
+export const StaffWorkAll = [works, sick, special, more, out]
 //部門管理資料
 for (let i = 0; i < DepartmentList.length; i++) {
     StaffDepartRes.push({
-        '部門': DepartmentList[i],
-        '主管姓名': faker.name.firstName() + faker.name.lastName(),
-        '英文姓名': faker.name.findName(),
-        '手機': faker.phone.phoneNumber(),
-        '狀態': RandomDetail(CateHoilday, 4),
-        '部門人數': Math.floor(Math.random() * 10)
+        Department: DepartmentList[i],
+        LeaderName: faker.name.firstName() + faker.name.lastName(),
+        EnglishName: faker.name.findName(),
+        Phone: faker.phone.phoneNumber(),
+        Status: RandomDetail(CateHoilday, 4),
+        Members: Math.floor(Math.random() * 10)
     })
 }
 //庫存管理資料
@@ -123,4 +132,4 @@ let PartyTree = [
 
 
 ]
-export { StaffListRes, StaffWorkRes, StaffDepartRes, InventoryRes, YearCalendar ,PartyTree}
+export { StaffListRes, StaffWorkRes, StaffDepartRes, InventoryRes, YearCalendar, PartyTree }

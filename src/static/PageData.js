@@ -7,11 +7,12 @@ import LeaveApply from '../components/StaffWork/LeaveApply';
 import StatusApply from '../components/StaffWork/StatusApply';
 import Money from '../components/StaffWork/Money';
 import MainPage from '../components/MainIndex/MainPage';
+import Login from '../components/LoginPage/Login';
 export const routerComponent = [
     {
         rid: 'MainPage',
         exact: true,
-        path: '/',
+        path: '/home',
         component: MainPage
     },
     {
@@ -70,7 +71,7 @@ export const routerComponent = [
 export const routerMap = [
     {
         id: 'home',
-        href: '/',
+        href: '/home',
         component: MainPage,
         icon: 'fas fa-home',
         title: '回首頁'

@@ -3,8 +3,8 @@ import { Button } from 'react-bootstrap';
 import { createPortal } from 'react-dom';
 const backTop = () => {
     window.scrollTo({
-        top:0,
-        behavior:'smooth'
+        top: 0,
+        behavior: 'smooth'
     });
 }
 const ScrollTopButton = () => {
@@ -16,5 +16,4 @@ const ScrollTopButton = () => {
         document.getElementById('top')
     );
 }
-
 export default ScrollTopButton;

@@ -1,15 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useState, useEffect } from 'react';
 import { PublicNav } from '../Layout';
 import { Form } from 'react-bootstrap';
-class LeaveApply extends Component {
-    render() {
-        return (
-            <Fragment>
-                <PublicNav RouteName="請假申請" />
-                <Form></Form>
-            </Fragment>
-        );
-    }
+const LeaveApply = () => {
+    return (
+        <Fragment>
+            <PublicNav RouteName="請假申請" />
+            <h5>React Hooks</h5>
+        </Fragment>
+    );
 }
 
 export default LeaveApply;

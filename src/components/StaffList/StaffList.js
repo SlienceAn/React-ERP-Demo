@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ListNotice, ListRoute } from '../../static/PageData';
 import { PublicNav } from '../Layout'
 import PublicNotice from '../Public/PublicNotice';
-import { StaffListRes } from '../../static/TestDataFake';
+import { StaffListRes ,StatusListAll} from '../../static/TestDataFake';
 import withOpen from '../../HOC/withOpen';
 import StaffListForm from './StaffListForm'
 const WithOpenPublicNotice = withOpen(PublicNotice);
@@ -15,6 +15,9 @@ class StaffList extends Component {
         StaffRes: StaffListRes,
         DriverDetail: ''
     }
+    componentDidMount() {
+     
+    }
     getDetail = (e) => {
         this.setState({ DriverDetail: e })
     }
@@ -23,7 +26,7 @@ class StaffList extends Component {
             <div>
                 <PublicNav {...ListRoute} />
                 <ContentBox>
-                    <WithOpenPublicNotice data={this.state.NoticeContent} getDetail={this.getDetail}>
+                    <WithOpenPublicNotice data={this.state.NoticeContent} getDetail={this.getDetail} total={StatusListAll}>
                         <StaffListForm />
                     </WithOpenPublicNotice>
                     <WithOpenPublicTable {...this.state}>
