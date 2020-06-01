@@ -16,8 +16,8 @@ class PublicNotice extends Component {
                     <Col className="p-0" lg={2}>
                         <Card>
                             <Card.Body className="p-0">
-                                <div style={{ margin: '0px auto', padding: '1rem' }}>
-                                    <img src={imglogo} className="bg-secondary" />
+                                <div className="text-center" style={{ margin: '0px auto', padding: '1rem' }}>
+                                    <img src={imglogo} className="bg-secondary" width=""/>
                                     <OwnBtn className="btn btn-secondary" onClick={handleOpen} >個人資訊</OwnBtn>
                                 </div>
                             </Card.Body>

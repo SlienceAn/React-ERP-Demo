@@ -24,24 +24,27 @@ class PublicTable extends Component {
         })
     }
     changePage = (e) => {
-        switch (e.target.name) {
+        const { name, text, value } = e.target;
+        const { showPage } = this.state;
+        const { StaffRes } = this.props;
+        switch (name) {
             case 'pagebtn':
                 this.setState({
-                    dataTree: this.props.StaffRes.slice(0 + parseInt(this.state.showPage) * (e.target.text - 1), parseInt(this.state.showPage) + parseInt(this.state.showPage) * (e.target.text - 1)),
-                    startActive: e.target.text,
+                    dataTree: StaffRes.slice(0 + parseInt(showPage) * (text - 1), parseInt(showPage) + parseInt(showPage) * (text - 1)),
+                    startActive: text,
                 })
                 break;
             case 'select':
                 let btns = [];
-                let pageTotal = Math.ceil(this.props.StaffRes.length / e.target.value)
+                let pageTotal = Math.ceil(StaffRes.length / value)
                 for (let i = 0; i < pageTotal; i++) {
                     btns = [...btns, i + 1]
                 }
                 this.setState({
-                    showPage: e.target.value,
+                    showPage: value,
                     pages: btns,
-                    dataTree: this.props.StaffRes.slice(0, e.target.value),
-                    countPage: Math.ceil(this.props.StaffRes.length / e.target.value),
+                    dataTree: StaffRes.slice(0, value),
+                    countPage: Math.ceil(StaffRes.length / value),
                     startActive: 1
                 })
                 break;
@@ -49,9 +52,15 @@ class PublicTable extends Component {
     }
     searchInput = e => {
         const { value } = e.target;
-        this.setState({
-            searchList: Object.values(this.props.StaffRes).filter(el => el.ChineseName.indexOf(value) != "-1")
-        })
+        const { StaffRes } = this.props
+        if (value != "") {
+            this.setState({
+                searchList: Object.values(StaffRes).filter(el => el.ChineseName.indexOf(value) != "-1")
+            })
+        }
+
+
+
     }
     render() {
         const { pages, dataTree, startActive, countPage, searchList } = this.state;

@@ -4,6 +4,7 @@ import bg from "../../Imgs/react.jpg";
 import boxBG from "../../Imgs/reactBg.jpg";
 import rbg from "../../Imgs/rbg.png";
 import LoginForm from "./LoginForm";
+import LoginAlert from "./LoginAlert";
 const Login = () => {
     const [isLogin, setLogin] = useState(true);
     return (

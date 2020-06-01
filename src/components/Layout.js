@@ -9,6 +9,7 @@ import './Sidebar.css';
 import styled from 'styled-components'
 import PropTypes from 'prop-types';
 import Animate from 'react-smooth';
+import ScrollTopButton from './Public/ScrollTopButton'
 class Layout extends Component {
     static childContextTypes = {
         isFull: PropTypes.bool
@@ -69,7 +70,6 @@ class Layout extends Component {
                                             <i className={el.icon} style={{ marginRight: '1rem' }}></i>
                                             <div>{el.title}</div>
                                         </div>
-                                        <i className="fas fa-angle-right"></i>
                                     </NavItem>
                                 </LinkContainer>)}
                             </Nav>}
@@ -77,6 +77,7 @@ class Layout extends Component {
                         <MainContent style={{ padding: '0', background: '#ddd', width: open ? '100%' : 'calc(100% - 250px)', marginLeft: open ? '0px' : '250px' }}>
                             <Routers/>
                         </MainContent>
+                        <ScrollTopButton/>
                     </Row>
                 </div>
             </Router>

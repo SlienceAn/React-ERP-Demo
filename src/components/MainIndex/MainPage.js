@@ -6,7 +6,6 @@ import { YearCalendar } from '../../static/TestDataFake';
 import FullCalendar from './FullCalendar';
 import FilesGroup from './FilesGroup';
 import Project from './Project';
-import Announcement from './Announcement';
 class MainPage extends Component {
     render() {
         return (
@@ -21,11 +20,8 @@ class MainPage extends Component {
                     </Col>
                 </Row>
                 <Row style={{ margin: '10px 0 20px 0px' }}>
-                    <Col lg={9}>
+                    <Col lg={12}>
                         <FullCalendar {...YearCalendar} />
-                    </Col>
-                    <Col lg={3}>
-                        <Announcement {...AnnouncementData} />
                     </Col>
                 </Row>
             </Fragment>

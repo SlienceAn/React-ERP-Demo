@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect, useState, createRef } from 'react';
 import { Button, InputGroup, FormControl, FormCheck } from 'react-bootstrap';
 import imgs from "../../Imgs/logo192.png";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import styled from 'styled-components';
+import LoginAlert from "./LoginAlert";
 const LoginForm = (props) => {
     const [isLogin, setLogin] = useState(false)
     const account = React.createRef();
@@ -63,6 +64,7 @@ const LoginForm = (props) => {
                 </InputGroup>
                 <Button className="w-100" style={{ background: '#244680' }} onClick={checkLogin}>登入</Button>
             </Box>
+            <LoginAlert/>
             {isLogin && <Redirect push to="/Layout"></Redirect>}
         </Fragment>
     );

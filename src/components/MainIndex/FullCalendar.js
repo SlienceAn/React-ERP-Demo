@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { Card, Row } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
+import Announcement from './Announcement';
 const to = new Date();
 const week = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
 class FullCalendar extends Component {
@@ -42,22 +43,29 @@ class FullCalendar extends Component {
             </div>
           </Card.Header>
           <Card.Body className="p-0">
-            <Row className="m-0">
-              {week.map(el =>
-                <div key={el} className="text-center text-white d-flex justify-content-center align-items-center" style={{ width: 'calc(100%/ 7)', height: '5vh', backgroundColor: 'rgb(3, 54, 56)' }}>{el}</div>
-              )}
-            </Row>
-            <Row className="m-0">
-              {this.props.needMonths[1]['date'].map((el, idx) =>
-                <CalendarDiv key={idx} onClick={() => { this.writeTag(idx) }}>
-                  <div className="d-flex justify-content-end">
-                    <CalenderDate>
-                      {idx + 1}
-                    </CalenderDate>
-                  </div>
-                  <div className={el.content ? " bg-dark text-white mt-5" : ""}>{el.content}</div>
-                </CalendarDiv>
-              )}
+            <Row>
+              <Col lg={8}>
+                <Row className="m-0">
+                  {week.map(el =>
+                    <div key={el} className="text-center text-white d-flex justify-content-center align-items-center" style={{ width: 'calc(100%/ 7)', height: '5vh', backgroundColor: 'rgb(3, 54, 56)' }}>{el}</div>
+                  )}
+                </Row>
+                <Row className="m-0">
+                  {this.props.needMonths[1]['date'].map((el, idx) =>
+                    <CalendarDiv key={idx} onClick={() => { this.writeTag(idx) }}>
+                      <div className="d-flex justify-content-end">
+                        <CalenderDate>
+                          {idx + 1}
+                        </CalenderDate>
+                      </div>
+                      <div className={el.content ? " bg-dark text-white mt-5" : ""}>{el.content}</div>
+                    </CalendarDiv>
+                  )}
+                </Row>
+              </Col>
+              <Col lg={4}>
+                <Announcement {...this.state.CalendarData}/>
+              </Col>
             </Row>
           </Card.Body>
         </Card>
@@ -68,18 +76,18 @@ class FullCalendar extends Component {
 
 const CalendarDiv = styled.div({
   width: 'calc(100%/ 7)',
-  height: '20vh',
+  height: '15vh',
   display: 'flex',
   flexDirection: 'column',
   borderBottom: '1px solid rgba(3, 54, 56,.5)',
-  borderRight:'1px solid rgba(3, 54, 56,.5)'
+  borderRight: '1px solid rgba(3, 54, 56,.5)'
 
 })
 const CalenderDate = styled.div({
   fontSize: '1rem',
-  fontWeight:'bolder',
+  fontWeight: 'bolder',
   padding: '.5rem .5rem .5rem 1.5rem',
-  borderBottom:'.5px solid rgba(3, 54, 56,.5)',
-  borderLeft:'.5px solid rgba(3, 54, 56,.5)'
+  borderBottom: '.5px solid rgba(3, 54, 56,.5)',
+  borderLeft: '.5px solid rgba(3, 54, 56,.5)'
 })
 export default FullCalendar;

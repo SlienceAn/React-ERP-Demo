@@ -1,16 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment,useState,useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
-
-const openDatail = () => {
-
-}
-
 const Announcement = (props) => {
     return (
         <Fragment>
             <Card className="mb-3">
-                <Card.Header>公告</Card.Header>
+                <Card.Header>行事曆事件總覽</Card.Header>
                 <Card.Body>
                     <ListGroup className="p-0">
                         {Object.keys(props).map(el =>
@@ -19,7 +14,7 @@ const Announcement = (props) => {
                                     <i className="fas fa-volume-up"></i>
                                 </div>
                                 <div>{props[el].date}</div>
-                                <div className="text-primary" onClick={openDatail}>閱讀更多</div>
+                                <div className="text-primary">閱讀更多</div>
                             </ListGroup.Item>)}
                     </ListGroup>
                 </Card.Body>
