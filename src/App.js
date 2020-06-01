@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Layout from './components/Layout';
+import Login from './components/LoginPage/Login';
+import { Route, HashRouter, Link } from 'react-router-dom';
 function App() {
   return (
-    <Layout />
+    <Fragment>
+      <HashRouter>
+        <Route path="/" exact component={Login} />
+        <Route path="/Layout" exact component={Layout} />
+      </HashRouter>
+    </Fragment>
+
   );
 }
 

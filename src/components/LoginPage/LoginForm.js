@@ -1,13 +1,32 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState, createRef } from 'react';
 import { Button, InputGroup, FormControl, FormCheck } from 'react-bootstrap';
 import imgs from "../../Imgs/logo192.png";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import styled from 'styled-components';
 const LoginForm = (props) => {
+    const [isLogin, setLogin] = useState(false)
+    const account = React.createRef();
+    const password = React.createRef();
+    useEffect(() => {
+        account.current.focus();
+    }, [])
+    const checkLogin = () => {
+        if (!account.current.value || !password.current.value) {
+            alert('帳號或密碼為空!');
+            return
+        }
+        if (account.current.value == "React" && password.current.value == "React") {
+            setLogin({
+                isLogin: true
+            })
+        } else {
+            alert('帳號密碼錯誤!');
+        }
+    }
     return (
         <Fragment>
             <Header>
-                <img src={imgs} style={{ width: '85px', marginRight: '1rem' }} />
+                <img src={imgs} style={imgRoate} />
                 <Htext>瑞特企業管理系統</Htext>
             </Header>
             <Box>
@@ -22,6 +41,7 @@ const LoginForm = (props) => {
                         aria-label="Default"
                         aria-describedby="inputGroup-sizing-default"
                         placeholder="輸入帳號"
+                        ref={account}
                     />
                 </InputGroup>
                 <label style={{ fontSize: '1.5rem' }}>密碼</label>
@@ -35,19 +55,24 @@ const LoginForm = (props) => {
                         aria-label="Default"
                         aria-describedby="inputGroup-sizing-default"
                         placeholder="輸入密碼"
+                        ref={password}
                     />
                 </InputGroup >
                 <InputGroup className="mb-5">
                     <FormCheck label="記住密碼"></FormCheck>
                 </InputGroup>
-                <Button className="w-100" style={{ background: '#244680' }}>
-                    <Link to="/StaffList" style={{ display: 'block', color: '#fff' }}>登入</Link>
-                </Button>
+                <Button className="w-100" style={{ background: '#244680' }} onClick={checkLogin}>登入</Button>
             </Box>
+            {isLogin && <Redirect push to="/Layout"></Redirect>}
         </Fragment>
     );
-
 }
+
+const imgRoate = {
+    width: '85px',
+    marginRight: '1rem',
+}
+
 const Header = styled.div({
     minHeight: '150px',
     width: '100%',

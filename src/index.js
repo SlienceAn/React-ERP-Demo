@@ -7,13 +7,13 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import withOpen from './HOC/withOpen';
 import Login from './components/LoginPage/Login'
+import App from './App'
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Login />
+      <App />
     </Switch>
   </BrowserRouter>
-
   ,
   document.getElementById('root')
 );

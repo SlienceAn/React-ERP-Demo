@@ -7,71 +7,10 @@ import LeaveApply from '../components/StaffWork/LeaveApply';
 import StatusApply from '../components/StaffWork/StatusApply';
 import Money from '../components/StaffWork/Money';
 import MainPage from '../components/MainIndex/MainPage';
-import Login from '../components/LoginPage/Login';
-export const routerComponent = [
-    {
-        rid: 'MainPage',
-        exact: true,
-        path: '/home',
-        component: MainPage
-    },
-    {
-        rid: 'StaffList',
-        exact: true,
-        path: '/StaffList',
-        component: StaffList
-    },
-    {
-        rid: 'StaffWork',
-        exact: true,
-        path: '/StaffWork',
-        component: StaffWork
-    },
-    {
-        rid: 'DepartmentControl',
-        exact: true,
-        path: '/DepartmentControl',
-        component: DepartmentControl
-    },
-    {
-        rid: 'Inventory',
-        exact: true,
-        path: '/Inventory',
-        component: Inventory
-    },
-    {
-        rid: 'ProjectManger',
-        exact: true,
-        path: '/ProjectManger',
-        component: ProjectManger
-    },
-    {
-        rid: 'LeaveApply',
-        exact: true,
-        path: '/LeaveApply',
-        component: LeaveApply
-    }
-    ,
-    {
-        rid: 'StatusApply',
-        exact: true,
-        path: '/StatusApply',
-        component: StatusApply
-    }
-    ,
-    {
-        rid: 'Money',
-        exact: true,
-        path: '/Money',
-        component: Money
-    }
-
-]
-
 export const routerMap = [
     {
         id: 'home',
-        href: '/home',
+        href: '/',
         component: MainPage,
         icon: 'fas fa-home',
         title: '回首頁'

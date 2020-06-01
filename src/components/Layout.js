@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import Navlogo from '../Imgs/logo192.png';
 import { routerMap, routerComponent } from '../static/PageData';
+import Routers from '../static/Routers';
 import './Sidebar.css';
 import styled from 'styled-components'
 import PropTypes from 'prop-types';
@@ -39,7 +40,8 @@ class Layout extends Component {
                                     <i className="fas fa-cogs"></i>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="#">actions</Dropdown.Item>
+                                    <Dropdown.Item href="/Login">登出</Dropdown.Item>
+                                    <Dropdown.Item href="#">更換密碼</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
@@ -73,7 +75,7 @@ class Layout extends Component {
                             </Nav>}
                         </SidebarLeft>
                         <MainContent style={{ padding: '0', background: '#ddd', width: open ? '100%' : 'calc(100% - 250px)', marginLeft: open ? '0px' : '250px' }}>
-                            {routerComponent.map(rel => <Route key={rel.rid} path={rel.path} exact={rel.exact} component={rel.component} />)}
+                            <Routers/>
                         </MainContent>
                     </Row>
                 </div>
