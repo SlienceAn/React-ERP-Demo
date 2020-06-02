@@ -4,12 +4,16 @@ import imgs from "../../Imgs/logo192.png";
 import { Redirect } from "react-router-dom";
 import styled from 'styled-components';
 import LoginAlert from "./LoginAlert";
+const AlertStatus = createContext();
+
 const LoginForm = (props) => {
     const [isLogin, setLogin] = useState(false)
-    const [isAlert, setAlert] = useState(false)
+    const [isToggle, setAlert] = useState(false)
+    const toggleAlert = () => setAlert(false)
     const [text, setText] = useState('')
     const account = React.createRef();
     const password = React.createRef();
+
     useEffect(() => {
         account.current.focus();
     }, [])
@@ -51,7 +55,7 @@ const LoginForm = (props) => {
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
                         <InputGroup.Text style={{ background: '#244680' }}>
-                            <i className="far fa-address-book" style={{ fontSize: '1.5rem', color: '#fff' }}></i>
+                            <i className="fas fa-key" style={{ fontSize: '1.5rem', color: '#fff' }}></i>
                         </InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl
@@ -64,10 +68,10 @@ const LoginForm = (props) => {
                 <InputGroup className="mb-5">
                     <FormCheck label="記住密碼"></FormCheck>
                 </InputGroup>
-                <Button className="w-100" style={{ background: '#244680' }} onClick={checkLogin}>登入</Button>
+                <Button className="w-100" style={{ background: '#244680' }} onClick={checkLogin} type="submit">登入</Button>
             </Box>
-            <AlertStatus.Provider>
-                <LoginAlert open={isAlert} value={{ isAlert, setAlert }}>{text}</LoginAlert>
+            <AlertStatus.Provider value={{isToggle,toggleAlert}}>
+                <LoginAlert open={isToggle} >{text}</LoginAlert>
             </AlertStatus.Provider>
             {isLogin && <Redirect push to="/Layout"></Redirect>}
         </Fragment>
@@ -97,5 +101,4 @@ const Box = styled.div({
     paddingTop: '1.6rem',
 
 })
-export const AlertStatus = createContext();
-export default LoginForm;
+export { LoginForm, AlertStatus }

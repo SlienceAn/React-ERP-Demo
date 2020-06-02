@@ -2,19 +2,23 @@ import React, { Fragment, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import styled from "styled-components";
 import { Button } from "react-bootstrap";
-import { AlertStatus } from './LoginForm';
+import { AlertStatus } from './LoginForm'
+import  Animate  from 'react-smooth';
 const LoginAlert = props => {
-    console.log(props);
+    const values = useContext(AlertStatus)
+    const { isToggle, toggleAlert } = values
     return createPortal(
         <Fragment>
-            {props.open && <AlertBg onClick={props.value.setAlert(false)}>
-                <Alerts>
-                    <i className="far fa-times-circle mb-5" style={{ color: "red", fontSize: '5rem' }}></i>
-                    <span className="mb-3" style={{ fontSize: '1.5rem', fontWeight: 'bolder' }}>Oops....{props.children}</span>
-                    <Button className="mb-2" onClick=""> 確認</Button>
-                </Alerts>
+            {props.open && <AlertBg onClick={toggleAlert}>
+                <Animate to="1" from="0" attributeName="opacity">
+                    <Alerts>
+                        <i className="far fa-times-circle mb-4" style={{ color: "red", fontSize: '5rem' }}></i>
+                        <span className="mb-3" style={{ fontSize: '1.5rem', fontWeight: 'bolder' }}>Oops....{props.children}</span>
+                        <Button className="mb-2" style={{ background: '#244680' }} onClick={toggleAlert}> 確認</Button>
+                    </Alerts>
+                </Animate>
             </AlertBg>}
-        </Fragment>
+        </Fragment> 
         ,
         document.getElementById('alert')
     )
@@ -41,7 +45,8 @@ const Alerts = styled.div({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: '2rem'
+    borderRadius: '2rem',
+    transition: 'all .5s'
 
 })
 export default LoginAlert;
