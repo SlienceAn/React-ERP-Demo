@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState, createRef } from 'react';
+import React, { Fragment, useEffect, useState, createContext } from 'react';
 import { Button, InputGroup, FormControl, FormCheck } from 'react-bootstrap';
 import imgs from "../../Imgs/logo192.png";
 import { Redirect } from "react-router-dom";
@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import LoginAlert from "./LoginAlert";
 const LoginForm = (props) => {
     const [isLogin, setLogin] = useState(false)
+    const [isAlert, setAlert] = useState(false)
+    const [text, setText] = useState('')
     const account = React.createRef();
     const password = React.createRef();
     useEffect(() => {
@@ -13,15 +15,15 @@ const LoginForm = (props) => {
     }, [])
     const checkLogin = () => {
         if (!account.current.value || !password.current.value) {
-            alert('帳號或密碼為空!');
+            setAlert(true)
+            setText('帳號密碼不能是空的!')
             return
         }
         if (account.current.value == "React" && password.current.value == "React") {
-            setLogin({
-                isLogin: true
-            })
+            setLogin(true)
         } else {
-            alert('帳號密碼錯誤!');
+            setAlert(true)
+            setText('帳號密碼錯誤!')
         }
     }
     return (
@@ -64,12 +66,13 @@ const LoginForm = (props) => {
                 </InputGroup>
                 <Button className="w-100" style={{ background: '#244680' }} onClick={checkLogin}>登入</Button>
             </Box>
-            <LoginAlert/>
+            <AlertStatus.Provider>
+                <LoginAlert open={isAlert} value={{ isAlert, setAlert }}>{text}</LoginAlert>
+            </AlertStatus.Provider>
             {isLogin && <Redirect push to="/Layout"></Redirect>}
         </Fragment>
     );
 }
-
 const imgRoate = {
     width: '85px',
     marginRight: '1rem',
@@ -94,4 +97,5 @@ const Box = styled.div({
     paddingTop: '1.6rem',
 
 })
+export const AlertStatus = createContext();
 export default LoginForm;

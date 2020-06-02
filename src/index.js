@@ -2,11 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Layout from './components/Layout'
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import withOpen from './HOC/withOpen';
-import Login from './components/LoginPage/Login'
 import App from './App'
 ReactDOM.render(
   <BrowserRouter>
