@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Card, ProgressBar, ListGroup, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 import styled from 'styled-components';
-const randomStyle = ["dark", "success", "info", "warning", "danger", "primary", "secondary"];
 const typeCheck = (types) => {
     switch (types) {
         case 'web':
@@ -39,7 +38,10 @@ const Project = (props) => {
                                 <div className="d-flex align-items-center p-2">
                                     <i style={{ fontSize: '1.5rem' }} className={typeCheck(props[el].type) + " mr-2"}></i>
                                     <div>{props[el].name}</div>
-                                    <Button className="ml-auto" style={{ fontSize: '.75rem' }}>專案詳細</Button>
+                                    <Link to={`/ProjectControl/${props[el].name}`} className="ml-auto">
+                                        <Button  style={{ fontSize: '.75rem' }}>專案詳細
+                                    </Button>
+                                    </Link>
                                 </div>
                                 <div className="d-flex">
                                     <div style={{ width: '90%' }}>
