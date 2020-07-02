@@ -6,8 +6,8 @@ function App() {
   return (
     <Fragment>
       <HashRouter>
-        <Route path="/" exact component={Login} />
-        <Route path="/Layout" exact component={Layout} />
+        {/* <Route path="/" exact component={Login} /> */}
+        <Route path="/" exact component={Layout} />
       </HashRouter>
     </Fragment>
 

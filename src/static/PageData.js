@@ -7,10 +7,11 @@ import LeaveApply from '../components/StaffWork/LeaveApply';
 import StatusApply from '../components/StaffWork/StatusApply';
 import Money from '../components/StaffWork/Money';
 import MainPage from '../components/MainIndex/MainPage';
+import ProjectControl from '../components/MainIndex/ProjectControl'
 export const routerMap = [
     {
         id: 'home',
-        href: '/',
+        href: '/home',
         component: MainPage,
         icon: 'fas fa-home',
         title: '回首頁'
@@ -42,23 +43,13 @@ export const routerMap = [
         component: Inventory,
         icon: 'fas fa-database',
         title: '庫存管理'
-    },
-    {
-        id: 'ProjectManger',
-        href: '/ProjectManger',
-        component: ProjectManger,
-        icon: 'fas fa-cog',
-        title: '專案管理'
     }
 ]
 
 export const MainPageRoute = {
     RouteName: '首頁',
     Route: [
-        { id: '文件管理', href: '/', component: '' },
-        { id: '專案控管', href: '/', component: '' },
-        { id: '行事曆', href: '/', component: '' },
-        { id: '公告調整', href: '/', component: '' },
+     
     ]
 }
 export const AnnouncementData = [
@@ -69,11 +60,11 @@ export const AnnouncementData = [
 ]
 
 export const ProjectList = [
-    { type: 'web', name: '葳葳數位科技公司多人運動網站建置', loading: Math.floor(Math.random() * 100) },
-    { type: 'web', name: '2020市區靈車整合系統服務案', loading: Math.floor(Math.random() * 100) },
-    { type: 'system', name: '雲端打人系統維護更新', loading: Math.floor(Math.random() * 100) },
+    { type: 'web', name: '葳葳數位科技公司網站建置', loading: Math.floor(Math.random() * 100) },
+    { type: 'web', name: '2020市區公車整合系統服務案', loading: Math.floor(Math.random() * 100) },
+    { type: 'system', name: '雲端打卡系統維護更新', loading: Math.floor(Math.random() * 100) },
     { type: 'app', name: 'CMS庫存管理輔助系統行動端', loading: Math.floor(Math.random() * 100) },
-    { type: 'system', name: '驚動智障產學開發案', loading: Math.floor(Math.random() * 100) }
+    { type: 'system', name: '驚動智能產學開發案', loading: Math.floor(Math.random() * 100) }
 ]
 
 export const FilesExample = {
@@ -88,10 +79,10 @@ export const FilesExample = {
     files:
         [
             { type: 'pdf', name: '2020資訊組人事異動.pdf' },
-            { type: 'word', name: '2019南科嘉義PM精神檢驗報告.word' },
-            { type: 'ppt', name: '2020上半年幹話語錄擷取.ppt' },
-            { type: 'excel', name: '高層驗腦報表.xsxl' },
-            { type: 'pdf', name: '如何證明之證明無須證明手冊.pdf' }
+            { type: 'word', name: '2019南科嘉義PM期中報告.word' },
+            { type: 'ppt', name: '2019請款更動說明一覽表.ppt' },
+            { type: 'excel', name: '上半年數據報表.xsxl' },
+            { type: 'pdf', name: '工作守則規範手冊.pdf' }
         ]
 }
 

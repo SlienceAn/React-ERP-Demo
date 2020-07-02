@@ -42,7 +42,6 @@ class Layout extends Component {
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     <Dropdown.Item href="/Login">登出</Dropdown.Item>
-                                    <Dropdown.Item href="#">更換密碼</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
