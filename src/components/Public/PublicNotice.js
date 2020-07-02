@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Row, Col, FormControl } from 'react-bootstrap';
-import imglogo from '../../Imgs/logo192.png'
+import imglogo from '../../Imgs/user-logo.png'
 import styled from 'styled-components';
 import DataModal from './DataModal';
 class PublicNotice extends Component {
@@ -14,10 +14,10 @@ class PublicNotice extends Component {
             <Fragment>
                 <Row style={{ margin: '75px 0px 10px 0px', fontFamily: '微軟正黑體' }}>
                     <Col className="p-0" lg={2}>
-                        <Card>
-                            <Card.Body className="p-0">
-                                <div className="text-center" style={{ margin: '0px auto', padding: '1rem' }}>
-                                    <img src={imglogo} className="bg-secondary" width=""/>
+                        <Card className="h-100">
+                            <Card.Body className="p-0 d-flex align-items-center">
+                                <div className="text-center">
+                                    <img src={imglogo} style={{width:'100%'}}/>
                                     <OwnBtn className="btn btn-secondary" onClick={handleOpen} >個人資訊</OwnBtn>
                                 </div>
                             </Card.Body>

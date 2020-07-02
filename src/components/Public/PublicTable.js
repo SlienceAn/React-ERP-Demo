@@ -58,9 +58,6 @@ class PublicTable extends Component {
                 searchList: Object.values(StaffRes).filter(el => el.ChineseName.indexOf(value) != "-1")
             })
         }
-
-
-
     }
     render() {
         const { pages, dataTree, startActive, countPage, searchList } = this.state;
@@ -69,7 +66,7 @@ class PublicTable extends Component {
             <Fragment>
                 <TableBg>
                     <div className="d-flex mb-3">
-                        <Col lg={2} md={12} className="p-0 mr-2">
+                        <Col lg={4} md={12} className="p-0 mr-2">
                             <InputGroup>
                                 <FormControl
                                     placeholder="Username"
@@ -85,20 +82,17 @@ class PublicTable extends Component {
                             </InputGroup>
                             <SearchList>
                                 {searchList.map(el =>
-                                    <ListGroup.Item>{el.ChineseName}</ListGroup.Item>)}
+                                    <ListGroup.Item key={el.ChineseName}>{el.ChineseName}</ListGroup.Item>)
+                                }
                             </SearchList>
                         </Col>
-                        <Button variant="primary" className="mr-2 d-flex align-items-center">
-                            <i className="fas fa-download mr-2"></i>
-                            <div>下載</div>
-                        </Button>
                         <div className="d-flex ml-auto p-2 bd-highlight">
                             <div className="d-flex ml-auto justify-content-center align-items-center bd-highlight">
                                 <div className="mr-2">每頁顯示</div>
                                 <select className="mr-2" onChange={this.changePage} name="select">
-                                    <option value="5">10</option>
-                                    <option value="10">20</option>
-                                    <option value="20">30</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
                                 </select>
                                 <div>個 ,</div>
                             </div>
@@ -117,13 +111,10 @@ class PublicTable extends Component {
                             {dataTree.map((el, idx) =>
                                 < tr key={idx}>
                                     <td>{idx + 1}</td>
-                                    {Object.values(el).map((res, idx) => <td key={idx}>{res}</td>)}
-                                    < td >
+                                    {Object.values(el).map((res, idx) => <td key={idx} style={{ whiteSpace: 'nowrap' }}>{res}</td>)}
+                                    < td className="d-flex" >
                                         <Button className="mr-2" variant="outline-success" onClick={handleOpen}>
                                             <i className="fas fa-pen"></i>
-                                        </Button>
-                                        <Button variant="outline-danger">
-                                            <i className="fas fa-trash-alt"></i>
                                         </Button>
                                     </td>
                                 </tr>)}
