@@ -12,7 +12,7 @@ import ProjectControl from '../components/MainIndex/ProjectControl'
 const Routers = () => {
     return (
         <Fragment>
-            <Route exact path="/" component={MainPage}></Route>
+            <Route exact path="/React-ERP-Demo/Layout" component={MainPage}></Route>
             <Route exact path="/home" component={MainPage}></Route>
             <Route exact path="/StaffList" component={StaffList}></Route>
             <Route exact path="/DepartmentControl" component={DepartmentControl}></Route>

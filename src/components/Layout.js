@@ -41,7 +41,7 @@ class Layout extends Component {
                                     <i className="fas fa-cogs"></i>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="/Login">登出</Dropdown.Item>
+                                    <Dropdown.Item href="/">登出</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
