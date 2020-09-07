@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0a541ddf6128e9e80ee648db92b91de5",
+    "revision": "c308c1cba9ea6518cf85933158ecd625",
     "url": "/React-ERP-Demo/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-ERP-Demo/static/css/2.69121389.chunk.css"
   },
   {
-    "revision": "772cc1d784b9f0447958",
+    "revision": "76b909059a0daa8e1219",
     "url": "/React-ERP-Demo/static/css/main.0f01a030.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-ERP-Demo/static/js/2.a23f277f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "772cc1d784b9f0447958",
-    "url": "/React-ERP-Demo/static/js/main.887bb196.chunk.js"
+    "revision": "76b909059a0daa8e1219",
+    "url": "/React-ERP-Demo/static/js/main.b7162182.chunk.js"
   },
   {
     "revision": "202c9100c692e2de8d47",
