@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/React-ERP-Demo/static/css/main.0f01a030.chunk.css",
+    "main.js": "/React-ERP-Demo/static/js/main.887bb196.chunk.js",
+    "main.js.map": "/React-ERP-Demo/static/js/main.887bb196.chunk.js.map",
+    "runtime-main.js": "/React-ERP-Demo/static/js/runtime-main.2644438e.js",
+    "runtime-main.js.map": "/React-ERP-Demo/static/js/runtime-main.2644438e.js.map",
+    "static/css/2.69121389.chunk.css": "/React-ERP-Demo/static/css/2.69121389.chunk.css",
+    "static/js/2.a23f277f.chunk.js": "/React-ERP-Demo/static/js/2.a23f277f.chunk.js",
+    "static/js/2.a23f277f.chunk.js.map": "/React-ERP-Demo/static/js/2.a23f277f.chunk.js.map",
+    "index.html": "/React-ERP-Demo/index.html",
+    "precache-manifest.2e07d81a788192d2ca85e1eae0c420d6.js": "/React-ERP-Demo/precache-manifest.2e07d81a788192d2ca85e1eae0c420d6.js",
+    "service-worker.js": "/React-ERP-Demo/service-worker.js",
+    "static/css/2.69121389.chunk.css.map": "/React-ERP-Demo/static/css/2.69121389.chunk.css.map",
+    "static/css/main.0f01a030.chunk.css.map": "/React-ERP-Demo/static/css/main.0f01a030.chunk.css.map",
+    "static/js/2.a23f277f.chunk.js.LICENSE.txt": "/React-ERP-Demo/static/js/2.a23f277f.chunk.js.LICENSE.txt",
+    "static/media/rbg.png": "/React-ERP-Demo/static/media/rbg.05470872.png",
+    "static/media/react.jpg": "/React-ERP-Demo/static/media/react.a1bb1ef8.jpg",
+    "static/media/reactBg.jpg": "/React-ERP-Demo/static/media/reactBg.61608a40.jpg",
+    "static/media/user-logo.png": "/React-ERP-Demo/static/media/user-logo.d6759143.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2644438e.js",
+    "static/css/2.69121389.chunk.css",
+    "static/js/2.a23f277f.chunk.js",
+    "static/css/main.0f01a030.chunk.css",
+    "static/js/main.887bb196.chunk.js"
+  ]
+}
