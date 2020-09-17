@@ -45,7 +45,7 @@ class Layout extends Component {
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
-                        <Navbar.Brand href="/" className="d-flex text-white">
+                        <Navbar.Brand href="/React-ERP-Demo" className="d-flex text-white">
                             <img
                                 src={Navlogo}
                                 width="30"
