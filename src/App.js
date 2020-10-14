@@ -5,10 +5,10 @@ import { Route, HashRouter,BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <Fragment>
-      <BrowserRouter basename={ process.env.PUBLIC_URL }>
+      <HashRouter basename={ process.env.PUBLIC_URL }>
         <Route path="/" exact component={Login} />
         <Route path="/Layout" exact component={Layout} />
-      </BrowserRouter>
+      </HashRouter>
     </Fragment>
 
   );

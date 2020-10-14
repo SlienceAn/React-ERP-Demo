@@ -41,11 +41,11 @@ class Layout extends Component {
                                     <i className="fas fa-cogs"></i>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="/">登出</Dropdown.Item>
+                                    <Dropdown.Item href="/React-ERP-Demo">登出</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
-                        <Navbar.Brand href="/React-ERP-Demo" className="d-flex text-white">
+                        <Navbar.Brand className="d-flex text-white">
                             <img
                                 src={Navlogo}
                                 width="30"

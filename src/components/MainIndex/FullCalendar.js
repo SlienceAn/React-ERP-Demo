@@ -9,16 +9,19 @@ class FullCalendar extends Component {
     writeContent: '',
     CalendarData: this.props,
     defaultMonth: (to.getMonth()) + 1,
-    EventList:[]
+    EventList: []
   }
   writeTag = (e) => {
     const content = prompt('輸入當日進行活動');
-    let CopyCal = Object.assign({}, this.state.CalendarData);
-    CopyCal.needMonths[this.state.defaultMonth].date[e].content = content
-    this.setState({
-      CalendarData: CopyCal,
-      EventList:[...this.state.EventList,content]
-    })
+    if (content) {
+      let CopyCal = Object.assign({}, this.state.CalendarData);
+      CopyCal.needMonths[this.state.defaultMonth].date[e].content = content
+      this.setState({
+        CalendarData: CopyCal,
+        EventList: [...this.state.EventList, content]
+      })
+    }
+
   }
   selectMonth = (e) => {
     this.setState({
