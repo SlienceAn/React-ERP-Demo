@@ -22,6 +22,7 @@ const Routers = () => {
             <Route exact path="/StatusApply" component={StatusApply}></Route>
             <Route exact path="/Money" component={Money}></Route>
             <Route path="/ProjectControl/:Pjname" component={ProjectControl}></Route>
+            <Route component={MainPage} />
         </Fragment>
     );
 };
