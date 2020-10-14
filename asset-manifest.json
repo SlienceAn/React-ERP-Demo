@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/React-ERP-Demo/static/css/main.0f01a030.chunk.css",
-    "main.js": "/React-ERP-Demo/static/js/main.859e21ca.chunk.js",
-    "main.js.map": "/React-ERP-Demo/static/js/main.859e21ca.chunk.js.map",
+    "main.js": "/React-ERP-Demo/static/js/main.992ce42e.chunk.js",
+    "main.js.map": "/React-ERP-Demo/static/js/main.992ce42e.chunk.js.map",
     "runtime-main.js": "/React-ERP-Demo/static/js/runtime-main.2644438e.js",
     "runtime-main.js.map": "/React-ERP-Demo/static/js/runtime-main.2644438e.js.map",
     "static/css/2.69121389.chunk.css": "/React-ERP-Demo/static/css/2.69121389.chunk.css",
     "static/js/2.a23f277f.chunk.js": "/React-ERP-Demo/static/js/2.a23f277f.chunk.js",
     "static/js/2.a23f277f.chunk.js.map": "/React-ERP-Demo/static/js/2.a23f277f.chunk.js.map",
     "index.html": "/React-ERP-Demo/index.html",
-    "precache-manifest.823da21b4cafb68ae58e6c04d6c196b5.js": "/React-ERP-Demo/precache-manifest.823da21b4cafb68ae58e6c04d6c196b5.js",
+    "precache-manifest.6bad239619b13e3bac56f32856b9f824.js": "/React-ERP-Demo/precache-manifest.6bad239619b13e3bac56f32856b9f824.js",
     "service-worker.js": "/React-ERP-Demo/service-worker.js",
     "static/css/2.69121389.chunk.css.map": "/React-ERP-Demo/static/css/2.69121389.chunk.css.map",
     "static/css/main.0f01a030.chunk.css.map": "/React-ERP-Demo/static/css/main.0f01a030.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.69121389.chunk.css",
     "static/js/2.a23f277f.chunk.js",
     "static/css/main.0f01a030.chunk.css",
-    "static/js/main.859e21ca.chunk.js"
+    "static/js/main.992ce42e.chunk.js"
   ]
 }
